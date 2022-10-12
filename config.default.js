@@ -1,5 +1,7 @@
 module.exports = {
 
+    prefix: 'bridge.',
+
     keys: {
         revolt: 'REVOLT_KEY',
         discord: 'DISCORD_KEY'

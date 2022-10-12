@@ -32,7 +32,7 @@ module.exports.insert = (collection, obj) => {
 module.exports.query = (collection, query) => {
     return new Promise((resolve, reject) => {
         let res = db.collection(collection).find(query)
-        if (!res) return reject()
+        if (!res) return resolve()
         res.toArray()
             .then(resArray => resolve(resArray))
     })
@@ -42,7 +42,7 @@ module.exports.queryOne = (collection, query) => {
     return new Promise((resolve, reject) => {
         db.collection(collection).findOne(query)
             .then(res => {
-                if (!res) return reject()
+                if (!res) return resolve()
                 resolve(res)
             })
     })
